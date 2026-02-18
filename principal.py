@@ -1,20 +1,31 @@
-from parqueadero import RegistroParqueadero
-from clase_carro import Parqueadero
+from usuario import usuario
+from calculadora import calculadora
+from numeros import numeros 
 
-#CODIGO PRINCIPAL
+usuario1 = usuario("Andrés", "1234")
+numero1 = numeros(5)
+numero2 = numeros(10)
 
-sistema = Parqueadero()
 
-carro1 = RegistroParqueadero("1020345678", "Juan García", "Administrador", "ABC123", "Sedan", "Negro", "A-01", "2026-02-16", "08:30")
-carro2 = RegistroParqueadero("1020345679", "María López", "Cliente", "XYZ789", "SUV", "Blanco", "B-05", "2026-02-16", "09:15")
-carro3 = RegistroParqueadero("1020345680", "Carlos Rodríguez", "Cliente", "KLM456", "Pickup", "Azul", "C-12", "2026-02-16", "10:00")
-carro4 = RegistroParqueadero("1020345681", "Ana Martínez", "Cliente", "DEF321", "Hatchback", "Rojo", "A-03", "2026-02-16", "11:20")
+calculadora1 = calculadora (numero1,numero2)
 
-sistema.agregar_registro(carro1)
-sistema.agregar_registro(carro2)
-sistema.agregar_registro(carro3)
-sistema.agregar_registro(carro4)
 
-sistema.registrar_salida("KLM456", "11:45")
+suma = calculadora1.resultado_suma
+resta=calculadora1.resultado_resta
+multiplicacion=calculadora1.resultado_multiplicacion
+division=calculadora1.resultado_division
 
-sistema.mostrar_todo()
+fecha_actual=calculadora1.get_fecha()
+fecha_cambiada=calculadora1.set_fecha("2026-18-02")
+
+#mostrar resultados
+print(usuario1.mostrar_info())
+print(calculadora1.mostrar_info())
+print(numero1.mostrar_info())
+print(numero2.mostrar_info())
+print(f"suma:{suma}")
+print(f"resta:{resta}")
+print(f"multiplicacion:{multiplicacion}")
+print(f"division:{division}")
+print(f"fecha de la calculadora (antes):{fecha_actual}")
+print(f"fecha de la calculadora (despues):{fecha_cambiada}")
